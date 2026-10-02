@@ -1,22 +1,26 @@
 {
   "$schema": "https://raw.githubusercontent.com/Bow-T/bow-agent/main/schema/bow-skill.schema.json",
-  "id": "react-native-supabase",
-  "label": "React Native + Supabase",
-  "version": "1.0.0",
-  "description": "Bộ skill cho stack React Native + Supabase của team Bow — realtime, quy ước code, và lớp data Supabase. Đồng bộ cặp với stack Flutter + Supabase.",
-  "maintainer": "team-rn",
+  "id": "react-native",
+  "label": "React Native",
+  "version": "2.0.0",
+  "description": "Bộ skill cho công nghệ React Native — quy ước code của team Bow + 3 skill của Callstack về hiệu năng, điều hướng (React Navigation) và nâng cấp phiên bản (xem THIRD_PARTY.md). Lớp data & realtime Supabase (rn-supabase-data, rn-realtime) chỉ trải khi dự án tick cả bộ Supabase.",
+  "maintainer": "bow-agent",
   "skillsDir": "skills",
   "targets": {
     "detect": [
-      { "file": "package.json", "contains": "react-native" },
-      { "file": "app.json" },
-      { "path": "ios" }
-    ],
-    "monorepoHint": "apps/mobile-rn"
+      { "file": "package.json", "contains": "\"react-native\"" }
+    ]
+  },
+  "needs": {
+    "rn-supabase-data": ["supabase"],
+    "rn-realtime": ["supabase"]
   },
   "skills": [
-    "rn-realtime",
+    "react-native-best-practices",
+    "react-navigation",
     "rn-convention",
-    "rn-supabase-data"
+    "rn-realtime",
+    "rn-supabase-data",
+    "upgrading-react-native"
   ]
 }
